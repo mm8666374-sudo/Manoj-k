@@ -1,0 +1,47 @@
+import java.util.Scanner;
+ public class Main {
+    public static void main(String[] args) {
+        Scanner kbd=new Scanner(System.in);
+        int n=kbd.nextInt();
+        int count=0;
+        while(n>0){
+            n=n/10;
+            count++;
+        }
+        System.out.println(count);
+    }
+}
+
+import java.util.Scanner;
+ public class Main {
+    public static void main(String[] args) {
+        Scanner kbd=new Scanner(System.in);
+        int n=kbd.nextInt();
+        for(int i=1;i<=n;i++)
+        for(int j=1;j<=n;j++)
+        System.out.print(j+" ");
+    }
+ }
+public class Main {
+    public static void main(String[] args) {
+      
+      Scanner kbd=new Scanner(System.in);
+      int n=kbd.nextInt();
+      switch(n){
+          case 1:
+              System.out.println("Withdrawl");
+              break;
+          case 2:
+              System.out.println("Deposit");
+          case 3:
+              System.out.println("balance check");
+              break;
+          default:
+          System.out.println("please enter between 1-3");
+      }
+    }
+}
+
+
+
+
