@@ -1,0 +1,60 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+    Scanner kbd=new Scanner(System.in);
+    int n=kbd.nextInt();
+    for(int i=1;i<=n;i++){
+        
+        for(int j=1;j<=n-i;j++)
+             System.out.print(" ");
+        for(int j=1;j<=i;j++)
+             System.out.print("*");
+    
+    System.out.println();
+    }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+    for(char i='Z';i>='A';i--)
+    System.out.print(i+" ");
+    }
+}
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner kbd=new Scanner(System.in);
+        int n=kbd.nextInt();
+        int sum=0,digit=n,rem;
+        while(n>0){
+            rem=n%10;
+            sum=sum+rem;
+            n=n/10;
+            if(digit%sum==0)
+            System.out.print("harshad");
+            else
+        
+        System.out.println("not harshad");
+    }
+}
+}
+class Main {
+    public static void main(String[] args) {
+        int n,f=0,s=1,T=1,d;
+        Scanner kbd=new scanner (System.in);
+        int n=kbd.nextInt();
+        System.out.print(f+""+s+""+T);
+          for(i=4;i<=n;i++)
+              {
+              d=f+s+T;
+        System.out.print("t");
+          f=s;
+          
+          s=T;
+          T=d;
+    }
+}
+}
+
+
