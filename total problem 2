@@ -1,0 +1,433 @@
+.ArmstrongNumber.java
+import java.util.Scanner;
+public class ArmstrongNumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int  a, arm=0, count=0; //digitPower
+		int n = sc.nextInt();
+		int temp=n, temp2 =n, val;
+		while(n>0) {
+			count++;
+			n /=10;
+		}
+		while(temp>0) {
+			a =  temp%10;
+			val =1;
+			//digitPower = (int) Math.pow(a, count);
+			for(int i =0; i<count; i++) {
+				val *= a;
+			}
+			arm += val;
+			//arm += digitPower;
+			temp /= 10;
+		}
+		if(arm == temp2) {
+			System.out.println("Armstrong Number");
+		} else {
+			System.out.println("Not Armstrong Number");
+		}
+		sc.close();
+	}
+}
+2.CenterDigitOfANumber.java
+import java.util.Scanner;
+public class CenterDigitOfANumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), temp=n, count=0, digit=0;
+		while(n>0) {
+			count ++;
+			n /= 10;			
+		}
+		if(count %2 ==0) {
+			System.out.println("-1");
+		}
+		else {
+			count /= 2;
+			for(int i=0; i<=count; i++) {
+				digit = temp %10;
+				temp /= 10;
+			}
+			System.out.println(digit);
+		}
+		sc.close();
+	}
+}
+3.CollatzSequence.java
+import java.util.Scanner;
+public class CollatzSequence {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n=sc.nextInt(), temp;
+		while(n > 0) {
+			if(n % 2==0) {
+				System.out.print(n+" ");
+				 n /= 2;
+			}
+			else {
+				System.out.print(n+" ");
+				if(n != 1) {
+					temp = ((n*3)+1);
+					n = temp;
+				} else break;
+			}
+		}
+		sc.close();
+	}
+}
+4.CountDigits.java
+import java.util.Scanner;
+public class CountDigits {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int count=0;
+		while(n>0) {
+			n /= 10;
+			count++;
+		}
+		System.out.println(count);
+		sc.close();
+	}
+}
+5.FirstAndLastOccurrenceOfADigit.java
+import java.util.Scanner;
+public class FirstAndLastOccurrenceOfADigit {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), num = sc.nextInt();
+		int count=0, temp=n, first=0, last=0;
+		while(n>0) {
+			count++;
+			n /= 10;
+		}
+		int arr[] = new int[count];
+		String name = Integer.toString(temp);
+		for(int i=0; i<count; i++) {
+			arr[i] = name.charAt(i);
+		}
+		for (int k =0; k<count; k++) {
+			if(num == arr[k] - '0') {
+				first = k+1;
+				break;	
+			}
+		}
+		for(int j=count-1; j >=0; j--) {
+			if(num == arr[j] - '0') {
+				last = j+1;
+				break;
+			}
+		}
+		System.out.println("First="+ first+", Last="+last);
+		sc.close();
+	}
+}
+6.FrequencyOfDigits.java
+import java.util.Scanner;
+public class FrequencyOfDigits {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[] = new int[10];
+		int digit;
+		while(n >0) {
+			digit = n % 10;
+			switch(digit) {
+			case 0:
+				arr[0]++;
+				break;
+			case 1:
+				arr[1]++;
+				break;
+			case 2:
+				arr[2]++;
+				break;
+			case 3:
+				arr[3]++;
+				break;
+			case 4:
+				arr[4]++;
+				break;
+			case 5:
+				arr[5]++;
+				break;
+			case 6:
+				arr[6]++;
+				break;
+			case 7:
+				arr[7]++;
+				break;
+			case 8:
+				arr[8]++;
+				break;
+			case 9:
+				arr[9]++;
+				break;
+			}
+			n /=10;
+		}
+		for(int i=0; i<=9; i++) {
+			if(arr[i] != 0) {
+				System.out.print(i+"->"+ arr[i]+" ");
+			}
+		}
+		sc.close();
+	}
+}
+7.GCD_EuclideanAlgorithm.java
+import java.util.Scanner;
+public class GCD_EuclideanAlgorithm {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n1 = sc.nextInt(), n2 = sc.nextInt();
+		int dividend = (n1 > n2) ? n1 : n2;
+		int divisor = (n1 < n2) ? n1 : n2;
+		int rem = dividend % divisor;
+		if( rem == 0)System.out.println(divisor);
+		else {
+			dividend = divisor;
+			divisor = rem;
+			rem = dividend % divisor;
+		}
+		System.out.println(divisor);
+		sc.close();
+	}
+}
+8.HarshadOrNivenNumber.java
+import java.util.Scanner;
+public class HarshadOrNivenNumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int temp =n, digit, sum=0;
+		while(n>0) {
+			digit = n %10;
+			sum += digit;
+			n/=10;
+		}
+		if(temp % sum == 0) System.out.print("Harshad Number");
+		else System.out.print("Not Harshad Number");
+		sc.close();
+	}
+}
+9.MagicNumber.java
+import java.util.Scanner;
+public class MagicNumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int digit, sum;
+		while(n > 9) {
+			sum = 0;
+			while(n > 0) {
+				digit = n %10;
+				sum += digit;
+				n /= 10;
+			}
+			n= sum;
+		}
+		if(n == 1) System.out.println("Magic Number");
+		else System.out.println("Not Magic Number");
+		sc.close();
+	}
+}
+10.NeonNumber.java
+import java.util.Scanner;
+public class NeonNumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n =sc.nextInt(), sum=0, temp=n, digit, sq;
+		sq = n*n;
+		while(sq >0) {
+			digit = sq % 10;
+			sum += digit;
+			sq /=10;
+		}
+		if(temp == sum) System.out.println("Neon Number");
+		else System.out.println("Not Neon Number");
+		sc.close();
+	}
+}
+11.PalindromeNumber.java
+import java.util.Scanner;
+public class PalindromeNumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), temp=n, rev=0, digit;
+		while(n>0) {
+			digit = n %10;
+			rev = rev*10 + digit;
+			n /= 10;
+		}
+		if(rev == temp) System.out.println("Palindrome");
+		else System.out.println("Not Palindrome");
+		sc.close();
+	}
+}
+12.PrintDigitsLtoR.java
+import java.util.Scanner;
+public class PrintDigitsLtoR {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), temp=n;
+		String same = Integer.toString(n);
+		int digit, count=0, divisor;
+		while(n>0) {
+			count++;
+			n /=10;
+		}
+		divisor = (int) Math.pow(10, count-1);
+		while(divisor > 0) {
+			digit = (temp / divisor) %10;
+			System.out.print(digit + " ");
+			divisor /= 10;
+		}
+		System.out.println();
+		for(int i=0; i<count; i++) {
+			System.out.print(same.charAt(i) + " ");
+		}
+		sc.close();
+	}
+}
+13.PrintDigitsRtoL.java
+import java.util.Scanner;
+public class PrintDigitsRtoL {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), digit;
+		while(n>0) {
+			digit = n % 10;
+			System.out.print(digit + " ");
+			n /=10;
+		}
+	sc.close();
+	}
+}
+14.ProductOfDigits.java
+import java.util.Scanner;
+public class ProductOfDigits {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int prod =1, digit;
+		while(n>0) {
+			digit = n % 10;
+			prod *= digit;
+			n /= 10;					
+		}
+		System.out.println(prod);
+		sc.close();
+	}
+}
+15.ReverseaNumber.java
+import java.util.Scanner;
+public class ReverseaNumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), digit, rev=0;
+		while(n>0) {
+			digit = n %10;
+			rev = rev*10 + digit;
+			n /=10;
+		}
+		System.out.println(rev);
+		sc.close();
+	}
+}
+16.SpyNumber.java
+import java.util.Scanner;
+public class SpyNumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), digit, sum=0, prod =1;;
+		while(n>0) {
+			digit = n %10;
+			sum += digit;
+			prod *= digit;
+			n /=10;
+		}
+		if(sum == prod) System.out.println("Spy Number");
+		else System.out.println("Not Spy Number");
+		sc.close();
+	}
+}
+17.StrongNumber.java
+import java.util.Scanner;
+public class StrongNumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int count=0, temp1=n, temp2=n, fact=1, digit, sum =0;
+		while(n >0) {
+			count++;
+			n/=10;
+		}
+		for(int i=0; i<count; i++) {
+			digit = temp1 % 10;
+			for(int j=digit; j>0; j--) {
+				fact *= j;
+			}
+			temp1 /=10;
+			sum += fact;
+			fact =1;
+		}
+		if(sum == temp2) System.out.println("Strong Number");
+		else System.out.println("Not Strong Number");
+		sc.close();
+	}
+}
+18.SumOfDigits.java
+import java.util.Scanner;
+public class SumOfDigits {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int sum=0, digit;
+		while(n>0) {
+			digit = n %10;
+			sum += digit;
+			n /= 10;
+		}
+		System.out.println(sum);
+		sc.close();
+	}
+}
+19.SumOfEvenDigits.java
+import java.util.Scanner;
+public class SumOfEvenDigits {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int sum =0, digit;
+		while(n >0) {
+			digit = n % 10;
+			if(digit %2 ==0) sum+= digit;
+			n /= 10;
+		}
+		System.out.println(sum);
+		sc.close();
+	}
+}
+20.SwapFirstAndLastDigit.java
+import java.util.Scanner;
+public class SwapFirstAndLastDigit {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int count=0, temp=n;
+		while(n>0) {
+			count++;
+			n /= 10;
+		}
+		int arr[] = new int[count];
+		String name = Integer.toString(temp);
+		for(int i=0; i<count; i++) {
+			arr[i] = name.charAt(i);
+		}
+		int temp2 = arr[0];
+		arr[0] = arr[count-1];
+		arr[count-1] = temp2;
+		for(int a:arr) System.out.print((char)a);
+		sc.nextInt();
+	}
+}
